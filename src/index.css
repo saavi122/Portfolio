@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-accent: var(--accent-color);
+  --color-brand-accent-light: var(--accent-light);
+  --color-brand-teal: #38bdf8;
+  --color-brand-gold: #f59e0b;
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-bg-darker: var(--bg-darker);
+  --color-bg-github-empty: var(--github-empty);
+  --color-code-primary: var(--code-text);
+  --color-border-subtle: var(--border-color);
+  --color-border-active: var(--border-active);
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+:root {
+  --bg-primary: #09090f;
+  --bg-secondary: #0f0f1a;
+  --bg-tertiary: #141424;
+  --bg-darker: #050508;
+  --text-primary: #e8e8f0;
+  --text-secondary: #9999bb;
+  --text-muted: #555577;
+  --border-color: rgba(120, 120, 220, 0.12);
+  --border-active: rgba(120, 120, 220, 0.25);
+  --accent-color: #7b6ef6;
+  --accent-light: #a78bfa;
+  --accent-glow: rgba(123, 110, 246, 0.15);
+  --github-empty: #161b22;
+  --code-text: #c7d2fe;
+  --project-evenafter-bg: linear-gradient(to bottom right, rgba(13, 42, 58, 0.4), rgba(5, 17, 24, 0.8));
+  --project-dayzero-bg: linear-gradient(to bottom right, rgba(30, 16, 53, 0.4), rgba(11, 5, 21, 0.8));
+  --project-voguevista-bg: linear-gradient(to bottom right, rgba(44, 29, 10, 0.4), rgba(18, 12, 4, 0.8));
+  --project-aarogya-bg: linear-gradient(to bottom right, rgba(11, 36, 22, 0.4), rgba(4, 14, 9, 0.8));
+  --project-temp-bg: linear-gradient(to bottom right, rgba(46, 11, 36, 0.4), rgba(19, 4, 15, 0.8));
+  --spotlight-gradient: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(123, 110, 246, 0.08), transparent 40%);
+}
+
+.light {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e9ecef;
+  --bg-darker: #dee2e6;
+  --text-primary: #1a1a24;
+  --text-secondary: #4a4a68;
+  --text-muted: #8888aa;
+  --border-color: rgba(9, 9, 15, 0.08);
+  --border-active: rgba(9, 9, 15, 0.18);
+  --accent-color: #5c4ef2;
+  --accent-light: #7b6ef6;
+  --accent-glow: rgba(92, 78, 242, 0.08);
+  --github-empty: #ebedf0;
+  --code-text: #1e1b4b;
+  --project-evenafter-bg: linear-gradient(to bottom right, rgba(56, 189, 248, 0.06), #ffffff);
+  --project-dayzero-bg: linear-gradient(to bottom right, rgba(123, 110, 246, 0.06), #ffffff);
+  --project-voguevista-bg: linear-gradient(to bottom right, rgba(245, 158, 11, 0.06), #ffffff);
+  --project-aarogya-bg: linear-gradient(to bottom right, rgba(52, 211, 153, 0.06), #ffffff);
+  --project-temp-bg: linear-gradient(to bottom right, rgba(236, 72, 153, 0.06), #ffffff);
+  --spotlight-gradient: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(92, 78, 242, 0.05), transparent 40%);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a78bfa;
+}
+
+/* Glassmorphism helpers */
+.glass {
+  background: rgba(15, 15, 26, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+}
+.light .glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+}
+
+/* Mouse spotlight container */
+.spotlight-container {
+  position: relative;
+}
+.spotlight-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--spotlight-gradient);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.spotlight-container:hover::before {
+  opacity: 1;
+}
+
+/* Grid overlay background */
+.grid-bg {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(120, 120, 220, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(120, 120, 220, 0.03) 1px, transparent 1px);
+}
+.light .grid-bg {
+  background-image: linear-gradient(to right, rgba(92, 78, 242, 0.025) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(92, 78, 242, 0.025) 1px, transparent 1px);
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse-glow {
+  box-shadow: 0 0 12px var(--accent-color);
+  animation: pulse-shadow 2s infinite;
+}
+
+@keyframes pulse-shadow {
+  0%, 100% { box-shadow: 0 0 8px var(--accent-color); }
+  50% { box-shadow: 0 0 20px var(--accent-color); }
+}
+
+/* Code editor visuals */
+.code-window {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom transitions */
+.transition-all-custom {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
