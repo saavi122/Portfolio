@@ -21,7 +21,7 @@ const Journey = () => {
     {
       title: 'LinkedIn Hackathon Finalist',
       organization: 'LinkedIn Hackathon',
-      date: 'December 2026',
+      date: 'May 2026',
       type: 'competition',
       icon: <Award className="text-brand-gold" size={18} />,
       badge: 'Top 8 Rank Finish',
