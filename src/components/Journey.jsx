@@ -7,7 +7,7 @@ const Journey = () => {
     {
       title: 'LinkedIn CoachIn Program Selectee',
       organization: 'LinkedIn',
-      date: '2025 - Present',
+      date: '2026 - Present',
       type: 'mentorship',
       icon: <Briefcase className="text-brand-accent-light" size={18} />,
       badge: 'Top 100 / 21,000+ Applicants',
@@ -21,7 +21,7 @@ const Journey = () => {
     {
       title: 'LinkedIn Hackathon Finalist',
       organization: 'LinkedIn Hackathon',
-      date: 'December 2025',
+      date: 'December 2026',
       type: 'competition',
       icon: <Award className="text-brand-gold" size={18} />,
       badge: 'Top 8 Rank Finish',
