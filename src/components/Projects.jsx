@@ -1,10 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, MessageSquare, Briefcase, Shirt, ShieldCheck, Thermometer } from 'lucide-react';
+import { ArrowUpRight, MessageSquare, Briefcase, Shirt, ShieldCheck, Thermometer, Brain } from 'lucide-react';
 
 const Projects = () => {
   const projectsList = [
+    {
+      id: 'whycode',
+      title: 'WhyCode',
+      subtitle: 'AI Knowledge Recovery Platform',
+      desc: 'MERN-stack application that indexes codebase history to resolve tribal knowledge, architectural rationale, and doc drift using Gemini.',
+      tags: ['MERN Stack', 'Gemini API', 'Dependency Graph', 'Vercel Rewrites'],
+      icon: <Brain size={24} className="text-indigo-400" />,
+      bgVar: 'var(--project-whycode-bg)',
+      hoverBorder: 'hover:border-indigo-400/40',
+      tagColor: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20'
+    },
     {
       id: 'evenafter',
       title: 'EvenAfter',

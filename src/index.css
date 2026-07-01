@@ -39,6 +39,7 @@
   --project-voguevista-bg: linear-gradient(to bottom right, rgba(44, 29, 10, 0.4), rgba(18, 12, 4, 0.8));
   --project-aarogya-bg: linear-gradient(to bottom right, rgba(11, 36, 22, 0.4), rgba(4, 14, 9, 0.8));
   --project-temp-bg: linear-gradient(to bottom right, rgba(46, 11, 36, 0.4), rgba(19, 4, 15, 0.8));
+  --project-whycode-bg: linear-gradient(to bottom right, rgba(79, 70, 229, 0.4), rgba(30, 27, 75, 0.8));
   --spotlight-gradient: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(123, 110, 246, 0.08), transparent 40%);
 }
 
@@ -62,6 +63,7 @@
   --project-voguevista-bg: linear-gradient(to bottom right, rgba(245, 158, 11, 0.06), #ffffff);
   --project-aarogya-bg: linear-gradient(to bottom right, rgba(52, 211, 153, 0.06), #ffffff);
   --project-temp-bg: linear-gradient(to bottom right, rgba(236, 72, 153, 0.06), #ffffff);
+  --project-whycode-bg: linear-gradient(to bottom right, rgba(99, 102, 241, 0.06), #ffffff);
   --spotlight-gradient: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(92, 78, 242, 0.05), transparent 40%);
 }
 

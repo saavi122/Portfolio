@@ -27,7 +27,16 @@ Welcome to my personal developer portfolio! I am a Computer Science & Engineerin
 
 ## 📂 Featured Engineering Projects
 
-### 💬 1. EvenAfter — Gemini-Powered Real-time Chat
+### 🧠 1. WhyCode — AI Knowledge Recovery Platform
+*A MERN-stack application that indexes codebase history to resolve tribal knowledge, architectural rationale, and documentation drift.*
+- **Tech Stack**: React.js, Node.js, Express, MongoDB, Gemini API, Render, Vercel.
+- **Key Features**:
+  - Automatically indexes codebase commits and function implementation history.
+  - Integrates Google Gemini API (`gemini-2.5-flash`) to analyze code changes against docstrings, automating intent reconstruction.
+  - Secure invitation-based passwordless login gateway with dynamic Vercel rewrites to bypass CORS limits.
+  - Interactive microservice Dependency Graph featuring ownership tracking, real-time risk telemetry, and animated aurora backgrounds.
+
+### 💬 2. EvenAfter — Gemini-Powered Real-time Chat
 *A MERN messaging application leveraging Gemini AI for content analysis.*
 - **Tech Stack**: React.js, Node.js, Express, MongoDB, Socket.IO, JWT, Gemini API.
 - **Key Features**:
@@ -35,7 +44,7 @@ Welcome to my personal developer portfolio! I am a Computer Science & Engineerin
   - Automatic message evaluation utilizing Google Gemini to analyze context, sentiments, and toxicity flags.
   - Role-based communications portal with secure JWT authentication.
 
-### 📊 2. DayZero — AI Recruitment Analytics Portal (Hackathon Win)
+### 📊 3. DayZero — AI Recruitment Analytics Portal (Hackathon Win)
 *A full-stack dashboard designed to screen candidates and track analytics.*
 - **Tech Stack**: Flask, MongoDB, Gemini AI, React, Tailwind CSS.
 - **Key Features**:
@@ -43,14 +52,14 @@ Welcome to my personal developer portfolio! I am a Computer Science & Engineerin
   - Multi-agent analytics tracker evaluating student contributions and performance metrics.
   - Flask-powered Python backend with robust MongoDB storage.
 
-### 👗 3. Vogue Vista — AI Fashion Recommender
+### 👗 4. Vogue Vista — AI Fashion Recommender
 *Interactive recommendation engine tailoring outfits to user measurements.*
 - **Tech Stack**: React.js, Tailwind CSS, OpenAI API, Claude API.
 - **Key Features**:
   - Integrated both Claude and OpenAI models for flexible AI reasoning.
   - Predicts custom outfit matches by analyzing body shape indices and visual preferences.
 
-### 🏥 4. Aarogya Aadhar — Healthcare Security Portal (SIH Winner)
+### 🏥 5. Aarogya Aadhar — Healthcare Security Portal (SIH Winner)
 *Smart India Hackathon-winning digital identity proposal for healthcare security.*
 - **Tech Stack**: HTML, CSS, JavaScript, Responsive Web Architecture.
 - **Key Features**:

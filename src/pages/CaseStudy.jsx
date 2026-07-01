@@ -156,6 +156,86 @@ const CaseStudy = () => {
   }, [projectId]);
 
   const projectsData = {
+    whycode: {
+      title: 'WhyCode',
+      subtitle: 'AI Knowledge Recovery Platform & Microservice Dependency Graph',
+      problem: 'Software engineering teams frequently struggle with tribal knowledge loss, undocumented architectural decisions, and documentation drift as microservices and codebases evolve.',
+      research: 'Investigated Git version history analysis, AST (Abstract Syntax Tree) parsing, and context window constraints. Established that matching function implementation changes against docstrings using LLMs can automatically reconstruct developer intent.',
+      planning: 'Designed a MERN-stack application that indexes codebase history. Integrated Google Gemini API (gemini-2.5-flash) to evaluate function updates, built an invitation-based passwordless gateway, and configured Vercel rewrites to bypass CORS limits.',
+      dbDesign: `// MongoDB Database Schemas
+CodebaseIndex {
+  _id: ObjectId,
+  repoName: String,
+  lastIndexedCommit: String,
+  indexedAt: Date
+}
+
+FunctionHistory {
+  _id: ObjectId,
+  filePath: String,
+  functionName: String,
+  docstring: String,
+  implementationHash: String,
+  architecturalIntent: String,
+  lastModifiedBy: String,
+  riskScore: Number
+}
+
+DependencyNode {
+  _id: ObjectId,
+  serviceName: String,
+  dependencies: Array [String],
+  ownerTeam: String,
+  telemetryStatus: String ["healthy", "warning", "critical"]
+}`,
+      apiFlow: `POST /api/index/analyze-diff
+Request Body:
+{
+  "repoId": "whycode-main-65b82",
+  "commitHash": "a3f8b1c4e9d0"
+}
+
+Response Body:
+{
+  "status": "success",
+  "driftDetected": true,
+  "driftSummary": "Function 'processTelemetry' implementation changed but docstring was not updated.",
+  "intentReconstructed": "Added absolute zero checks for telemetry streams."
+}`,
+      challenges: 'Challenge: Bypassing browser CORS constraints when fetching metadata across distributed systems. Solution: Integrated dynamic Vercel rewrites to proxy API requests and secure invitation-based passwordless logins.',
+      performance: 'Lighthouse scoring: 97% Performance, 98% Best Practices. Reduced analysis overhead by utilizing Gemini 2.5 Flash for high-speed differential parsing.',
+      future: 'Introduce automated Slack notifications and automatic Pull Request (PR) docstring generation to sync codebase changes in real-time.',
+      github: 'https://github.com/saavi122/WhyCode',
+      demo: 'https://why-code.vercel.app/',
+      architectureDiagram: (
+        <svg viewBox="0 0 600 220" className="w-full h-auto bg-bg-dark rounded-xl border border-border-subtle p-6">
+          <rect x="20" y="80" width="100" height="60" rx="8" fill="#0f0f1a" stroke="#7b6ef6" strokeWidth="1.5" />
+          <text x="70" y="115" fill="#e8e8f0" fontSize="11" textAnchor="middle" fontFamily="monospace">Git Repository</text>
+
+          <path d="M120 110 L200 110" stroke="#a78bfa" strokeWidth="1.5" fill="none" markerEnd="url(#arrow)" />
+          <text x="160" y="100" fill="#9999bb" fontSize="9" textAnchor="middle" fontFamily="monospace">Webhooks / Sync</text>
+
+          <rect x="200" y="80" width="120" height="60" rx="8" fill="#0f0f1a" stroke="#38bdf8" strokeWidth="1.5" />
+          <text x="260" y="115" fill="#e8e8f0" fontSize="11" textAnchor="middle" fontFamily="monospace">WhyCode Engine (Node)</text>
+
+          <path d="M320 100 L400 100" stroke="#38bdf8" strokeWidth="1.5" fill="none" />
+          <path d="M320 120 L400 120" stroke="#f59e0b" strokeWidth="1.5" fill="none" />
+          <text x="360" y="90" fill="#9999bb" fontSize="9" textAnchor="middle" fontFamily="monospace">Analyze</text>
+
+          <rect x="400" y="50" width="120" height="50" rx="8" fill="#0f0f1a" stroke="#f59e0b" strokeWidth="1.5" />
+          <text x="460" y="80" fill="#e8e8f0" fontSize="10" textAnchor="middle" fontFamily="monospace">Gemini 2.5 Flash</text>
+
+          <rect x="400" y="120" width="120" height="50" rx="8" fill="#0f0f1a" stroke="#38bdf8" strokeWidth="1.5" />
+          <text x="460" y="150" fill="#e8e8f0" fontSize="10" textAnchor="middle" fontFamily="monospace">MongoDB / Graph</text>
+
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#a78bfa" />
+            </marker>
+          </defs>
+        </svg>
+      )
+    },
     evenafter: {
       title: 'EvenAfter',
       subtitle: 'Gemini AI-infused Real-time Messaging System',
