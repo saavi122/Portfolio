@@ -40,6 +40,7 @@
   --project-aarogya-bg: linear-gradient(to bottom right, rgba(11, 36, 22, 0.4), rgba(4, 14, 9, 0.8));
   --project-temp-bg: linear-gradient(to bottom right, rgba(46, 11, 36, 0.4), rgba(19, 4, 15, 0.8));
   --project-whycode-bg: linear-gradient(to bottom right, rgba(79, 70, 229, 0.4), rgba(30, 27, 75, 0.8));
+  --project-gigsure-bg: linear-gradient(to bottom right, rgba(11, 36, 22, 0.4), rgba(4, 14, 9, 0.8));
   --spotlight-gradient: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(123, 110, 246, 0.08), transparent 40%);
 }
 
@@ -64,6 +65,7 @@
   --project-aarogya-bg: linear-gradient(to bottom right, rgba(52, 211, 153, 0.06), #ffffff);
   --project-temp-bg: linear-gradient(to bottom right, rgba(236, 72, 153, 0.06), #ffffff);
   --project-whycode-bg: linear-gradient(to bottom right, rgba(99, 102, 241, 0.06), #ffffff);
+  --project-gigsure-bg: linear-gradient(to bottom right, rgba(52, 211, 153, 0.06), #ffffff);
   --spotlight-gradient: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(92, 78, 242, 0.05), transparent 40%);
 }
 
@@ -127,16 +129,7 @@ body {
   opacity: 1;
 }
 
-/* Grid overlay background */
-.grid-bg {
-  background-size: 50px 50px;
-  background-image: linear-gradient(to right, rgba(120, 120, 220, 0.03) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(120, 120, 220, 0.03) 1px, transparent 1px);
-}
-.light .grid-bg {
-  background-image: linear-gradient(to right, rgba(92, 78, 242, 0.025) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(92, 78, 242, 0.025) 1px, transparent 1px);
-}
+
 
 /* Animations */
 @keyframes float {
@@ -167,4 +160,36 @@ body {
 /* Custom transitions */
 .transition-all-custom {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Per Appelgren Kinetic Roll Link Effect */
+.kinetic-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  height: 1.25em;
+  vertical-align: bottom;
+}
+.kinetic-link .kinetic-inner {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.kinetic-link:hover .kinetic-inner {
+  transform: translateY(-50%);
+}
+
+/* Kinetic Marquee Ticker */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 20s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

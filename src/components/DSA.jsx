@@ -24,8 +24,8 @@ const DSA = () => {
           <span className="w-6 h-[1px] bg-brand-accent"></span>
           <span>Competitive Programming</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 tracking-tight">
-          Algorithmic <span className="font-serif italic font-normal text-brand-accent-light bg-gradient-to-r from-brand-accent-light to-brand-teal bg-clip-text text-transparent">Problem Solving</span>
+        <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight mb-16 text-text-primary">
+          Algorithmic <span className="font-serif italic font-normal text-brand-accent-light">Problem Solving</span>
         </h2>
 
         {/* DSA Main Dashboard Grid */}
@@ -38,7 +38,7 @@ const DSA = () => {
               <div className="shrink-0 flex items-center gap-4 bg-brand-accent/5 border border-brand-accent/20 p-6 rounded-2xl">
                 <Flame size={40} className="text-brand-accent-light animate-bounce" />
                 <div>
-                  <h3 className="text-4xl md:text-5xl font-black text-brand-accent-light font-mono">450+</h3>
+                  <h3 className="text-4xl md:text-5xl font-black text-brand-accent-light font-mono">500+</h3>
                   <p className="text-[10px] uppercase tracking-widest text-text-secondary mt-1">Total Solved</p>
                 </div>
               </div>

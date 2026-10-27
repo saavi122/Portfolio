@@ -68,11 +68,11 @@ const TerminalEasterEgg = ({ isOpen, onClose }) => {
         break;
       case 'projects':
         response = [
-          { text: '1. EvenAfter — Gemini-powered MERN real-time messaging application.', type: 'system' },
-          { text: '2. DayZero — Recruiter Dashboard & AI hiring platform (Top 8 LinkedIn Hackathon).', type: 'system' },
-          { text: '3. Vogue Vista — OpenAI/Claude based AI fashion recommendation system.', type: 'system' },
-          { text: '4. Aarogya Aadhar — Aarogya digital health identity card web system (SIH).', type: 'system' },
-          { text: 'Type "projects <name>" (e.g. "projects dayzero") to read more (coming soon).', type: 'info' }
+          { text: '1. GigSure — Parametric micro-insurance platform for gig economy workers.', type: 'system' },
+          { text: '2. WhyCode — AI knowledge recovery platform indexing codebase history.', type: 'system' },
+          { text: '3. DayZero — Recruiter Dashboard & AI hiring platform (Top 8 Hackathon).', type: 'system' },
+          { text: '4. Vogue Vista — OpenAI/Claude based AI fashion recommendation system.', type: 'system' },
+          { text: 'Type "projects <name>" (e.g. "projects gigsure") to read more.', type: 'info' }
         ];
         break;
       case 'contact':

@@ -61,11 +61,10 @@ const CommandPalette = ({ isOpen, onClose, onOpenTerminal }) => {
     { name: 'Go to Certifications', category: 'Navigation', icon: <Award size={16} />, action: () => handleAction('scroll', 'certifications') },
     { name: 'Go to Contact', category: 'Navigation', icon: <Compass size={16} />, action: () => handleAction('scroll', 'contact') },
     
-    { name: 'Case Study: EvenAfter (Gemini Chat)', category: 'Projects', icon: <Folder size={16} />, action: () => handleAction('route', '/projects/evenafter') },
-    { name: 'Case Study: DayZero (AI Hiring)', category: 'Projects', icon: <Folder size={16} />, action: () => handleAction('route', '/projects/dayzero') },
+    { name: 'Case Study: GigSure (Parametric Insurance)', category: 'Projects', icon: <Folder size={16} />, action: () => handleAction('route', '/projects/gigsure') },
+    { name: 'Case Study: WhyCode (AI Knowledge Recovery)', category: 'Projects', icon: <Folder size={16} />, action: () => handleAction('route', '/projects/whycode') },
+    { name: 'Case Study: DayZero (AI Hiring Dashboard)', category: 'Projects', icon: <Folder size={16} />, action: () => handleAction('route', '/projects/dayzero') },
     { name: 'Case Study: Vogue Vista (AI Fashion)', category: 'Projects', icon: <Folder size={16} />, action: () => handleAction('route', '/projects/voguevista') },
-    { name: 'Case Study: Aarogya Aadhar (Healthcare)', category: 'Projects', icon: <Folder size={16} />, action: () => handleAction('route', '/projects/aarogya-aadhar') },
-    { name: 'Case Study: Temp Conyotl (Converter)', category: 'Projects', icon: <Folder size={16} />, action: () => handleAction('route', '/projects/temp-converter') },
 
     { name: 'Toggle Dark / Light Theme', category: 'System', icon: <SunMoon size={16} />, action: () => handleAction('theme') },
     { name: 'Open Developer Terminal console ( ` )', category: 'System', icon: <Terminal size={16} />, action: () => handleAction('terminal') },

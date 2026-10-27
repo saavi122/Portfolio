@@ -72,8 +72,8 @@ const Academics = () => {
             <GraduationCap size={14} />
             <span>Academic Qualifications</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 tracking-tight">
-            Academic <span className="font-serif italic font-normal text-brand-accent-light bg-gradient-to-r from-brand-accent-light to-brand-teal bg-clip-text text-transparent">Journey</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight mb-12 text-text-primary">
+            Academic <span className="font-serif italic font-normal text-brand-accent-light">Journey</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -115,8 +115,8 @@ const Academics = () => {
             <Award size={14} />
             <span>Professional Certifications</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 tracking-tight">
-            Verified <span className="font-serif italic font-normal text-brand-accent-light bg-gradient-to-r from-brand-accent-light to-brand-teal bg-clip-text text-transparent">Credentials</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight mb-12 text-text-primary">
+            Verified <span className="font-serif italic font-normal text-brand-accent-light">Credentials</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

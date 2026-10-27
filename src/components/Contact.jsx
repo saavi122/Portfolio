@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Trophy, Phone, ArrowRight, FileDown } from 'lucide-react';
+import { Mail, Trophy, Phone, ArrowRight, FileDown, MapPin } from 'lucide-react';
 
 const GithubIcon = ({ size = 20, ...props }) => (
   <svg viewBox="0 0 24 24" width={size} height={size} stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -49,96 +49,113 @@ const Contact = () => {
     }
   ];
 
-  const openTo = [
-    'Software Engineering Internships',
-    'AI / ML Internships',
-    'Full Stack Development',
-    'Hackathons & Co-labs',
-    'Research Opportunities'
-  ];
-
   return (
     <section id="contact" className="py-24 px-6 md:px-16 lg:px-24 bg-bg-secondary select-none">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
-        {/* Left column: Tagline & Open To */}
-        <div className="flex-1 text-left">
+      <div className="max-w-6xl mx-auto space-y-16">
+        
+        {/* Editorial Contact Header */}
+        <div className="text-left max-w-3xl">
           <div className="flex items-center gap-2 text-brand-accent text-xs font-bold uppercase tracking-widest mb-4">
             <span className="w-6 h-[1px] bg-brand-accent"></span>
-            <span>Let's Collaborate</span>
+            <span>Studio Contact &amp; Inquiries</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-sans leading-tight">
-            Looking for an <br />
-            <span className="font-serif italic font-normal text-brand-accent-light bg-gradient-to-r from-brand-accent-light to-brand-teal bg-clip-text text-transparent">intern ready to build</span>
+          <h2 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tight text-text-primary mb-6">
+            Let's build <span className="font-serif italic font-normal text-brand-accent-light">together.</span>
           </h2>
-          <p className="text-xs md:text-sm text-text-secondary leading-relaxed max-w-md mb-10">
-            I am actively looking for internship positions starting in Summer/Fall. Let's build something intelligent and performant together.
+          <p className="text-xs md:text-sm text-text-secondary leading-relaxed font-sans max-w-xl">
+            Currently accepting Software Engineering and AI/ML internship opportunities for Summer &amp; Fall. Open for full-stack software development, architectural design, and hackathons.
           </p>
-
-          <h3 className="text-xs uppercase tracking-widest text-text-primary font-bold mb-4">Open to Opportunities:</h3>
-          <div className="flex flex-wrap gap-2 max-w-md">
-            {openTo.map((role, idx) => (
-              <span 
-                key={idx} 
-                className="text-[10px] font-bold px-3 py-1.5 bg-bg-tertiary border border-border-subtle rounded-full text-brand-teal uppercase tracking-wider"
-              >
-                {role}
-              </span>
-            ))}
-          </div>
         </div>
 
-        {/* Right column: Social Portals */}
-        <div className="flex-1 w-full text-left space-y-3">
-          <h3 className="text-xs uppercase tracking-widest text-text-muted font-bold mb-6">Contact Channels:</h3>
+        {/* Per Appelgren Studio Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left pt-8 border-t border-border-subtle">
           
-          <div className="space-y-3">
+          {/* Column 1: Base & Institution */}
+          <div className="space-y-4">
+            <h3 className="text-xs uppercase tracking-widest text-brand-accent-light font-bold flex items-center gap-2">
+              <MapPin size={14} />
+              <span>Base &amp; Campus</span>
+            </h3>
+            <div className="text-xs text-text-secondary leading-relaxed font-sans space-y-1">
+              <p className="font-bold text-text-primary">Parul Institute of Technology</p>
+              <p>Department of Computer Science (AI/ML)</p>
+              <p className="text-text-muted">Vadodara &amp; Mumbai, India</p>
+            </div>
+          </div>
+
+          {/* Column 2: Credentials */}
+          <div className="space-y-4">
+            <h3 className="text-xs uppercase tracking-widest text-brand-teal font-bold">
+              Recognitions
+            </h3>
+            <div className="text-xs text-text-secondary leading-relaxed font-sans space-y-1">
+              <p className="font-bold text-text-primary">LinkedIn CoachIn Selectee</p>
+              <p>Top 8 LinkedIn Hackathon Finish</p>
+              <p className="text-text-muted">500+ Algorithmic Problems Solved</p>
+            </div>
+          </div>
+
+          {/* Column 3: Direct Inquiry */}
+          <div className="space-y-4">
+            <h3 className="text-xs uppercase tracking-widest text-brand-gold font-bold">
+              Direct Contact
+            </h3>
+            <div className="text-xs text-text-secondary leading-relaxed font-sans space-y-2">
+              <p className="font-bold text-text-primary">kotadiasaavi2811@gmail.com</p>
+              <p>+91 98920 17769</p>
+              <a 
+                href="/resume.pdf"
+                target="_blank"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-accent-light hover:underline pt-2"
+              >
+                <FileDown size={14} />
+                <span>Download Resume (PDF)</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Social Channels List */}
+        <div className="pt-8 border-t border-border-subtle">
+          <h3 className="text-xs uppercase tracking-widest text-text-muted font-bold text-left mb-6">Social Portals:</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
             {socialLinks.map((link, idx) => (
               <a
                 key={idx}
                 href={link.href}
                 target={link.label !== 'Phone' && link.label !== 'Email' ? '_blank' : '_self'}
                 rel="noreferrer"
-                className="flex items-center justify-between p-4 rounded-xl border border-border-subtle bg-bg-secondary hover:border-brand-accent/30 hover:bg-bg-tertiary transition-all duration-300 group"
+                className="p-4 rounded-xl border border-border-subtle bg-bg-primary hover:border-brand-accent/40 hover:bg-bg-tertiary transition-all duration-300 flex items-center justify-between group"
               >
-                <div className="flex items-center gap-4">
-                  <div className="p-2.5 rounded-lg bg-bg-primary border border-border-subtle group-hover:scale-110 transition-transform">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-bg-secondary group-hover:scale-110 transition-transform">
                     {link.icon}
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase tracking-widest text-brand-accent-light block font-semibold">{link.label}</span>
-                    <span className="text-xs md:text-sm text-text-secondary group-hover:text-text-primary font-mono mt-0.5 transition-colors">{link.value}</span>
+                    <span className="text-[9px] uppercase tracking-widest text-brand-accent-light font-bold block">{link.label}</span>
+                    <span className="text-xs text-text-secondary group-hover:text-text-primary font-mono truncate block max-w-[180px]">{link.value}</span>
                   </div>
                 </div>
-                <ArrowRight size={16} className="text-text-muted group-hover:text-brand-accent-light group-hover:translate-x-1 transition-all" />
+                <ArrowRight size={14} className="text-text-muted group-hover:text-brand-accent-light group-hover:translate-x-1 transition-all" />
               </a>
             ))}
-
-            {/* Resume Card download */}
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              className="flex items-center justify-between p-4 rounded-xl border border-brand-accent/20 bg-brand-accent/5 hover:border-brand-accent/40 hover:bg-brand-accent/10 transition-all duration-300 group"
-            >
-              <div className="flex items-center gap-4">
-                <div className="p-2.5 rounded-lg bg-brand-accent/10 border border-brand-accent/20 text-brand-accent-light">
-                  <FileDown size={16} />
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase tracking-widest text-brand-accent-light block font-semibold">Resume</span>
-                  <span className="text-xs md:text-sm text-text-secondary group-hover:text-text-primary font-mono mt-0.5 transition-colors">Download PDF CV</span>
-                </div>
-              </div>
-              <ArrowRight size={16} className="text-brand-accent-light group-hover:translate-x-1 transition-all" />
-            </a>
           </div>
         </div>
-      </div>
 
-      {/* Footer Details */}
-      <div className="max-w-6xl mx-auto pt-16 mt-16 border-t border-border-subtle flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-text-muted">
-        <span className="font-serif italic text-text-secondary">Saavi Kotadia</span>
-        <span>&copy; {new Date().getFullYear()} &bull; All Rights Reserved.</span>
-        <span>Built with React + Tailwind + Framer Motion.</span>
+        {/* Editorial Footer */}
+        <div className="pt-12 border-t border-border-subtle flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-text-muted select-none">
+          <div className="flex items-center gap-2 font-mono uppercase tracking-widest text-text-primary">
+            <span className="font-extrabold">SAAVI KOTADIA</span>
+            <span>&bull;</span>
+            <span className="text-text-secondary">SOFTWARE ENGINEER</span>
+          </div>
+          <div>&copy; {new Date().getFullYear()} Saavi Kotadia. All Rights Reserved.</div>
+          <div className="flex items-center gap-4 font-mono text-[10px]">
+            <span>DESIGN &amp; ARCHITECTURE BY SAAVI KOTADIA</span>
+          </div>
+        </div>
+
       </div>
     </section>
   );

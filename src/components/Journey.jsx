@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Award, Zap, Compass, CheckCircle2 } from 'lucide-react';
+import { Briefcase, Award, CheckCircle2 } from 'lucide-react';
 
 const Journey = () => {
   const milestones = [
@@ -35,15 +35,15 @@ const Journey = () => {
   ];
 
   return (
-    <section id="journey" className="py-24 px-6 md:px-16 lg:px-24 bg-bg-primary select-none">
-      <div className="max-w-4xl mx-auto text-left">
+    <section id="journey" className="py-24 px-6 md:px-16 lg:px-24 bg-bg-secondary select-none">
+      <div className="max-w-5xl mx-auto text-left">
         {/* Section Title */}
         <div className="flex items-center gap-2 text-brand-accent text-xs font-bold uppercase tracking-widest mb-4">
           <span className="w-6 h-[1px] bg-brand-accent"></span>
           <span>Professional Milestones</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 tracking-tight">
-          Mentorship & <span className="font-serif italic font-normal text-brand-accent-light bg-gradient-to-r from-brand-accent-light to-brand-teal bg-clip-text text-transparent">Competitions</span>
+        <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight mb-16 text-text-primary">
+          Mentorship &amp; <span className="font-serif italic font-normal text-brand-accent-light">Competitions</span>
         </h2>
 
         {/* Timeline container */}
@@ -58,18 +58,18 @@ const Journey = () => {
               className="relative"
             >
               {/* Timeline Dot Indicator */}
-              <div className="absolute -left-[39px] md:-left-[55px] top-1.5 w-6 h-6 rounded-full bg-bg-primary border-2 border-brand-accent flex items-center justify-center shadow-lg shadow-brand-accent/20 z-10">
+              <div className="absolute -left-[39px] md:-left-[55px] top-2 w-6 h-6 rounded-full bg-bg-primary border-2 border-brand-accent flex items-center justify-center shadow-lg shadow-brand-accent/20 z-10">
                 {item.icon}
               </div>
 
               {/* Card Container */}
-              <div className={`p-6 md:p-8 rounded-xl border border-border-subtle bg-bg-secondary hover:border-brand-accent/35 hover:-translate-y-1 transition-all duration-300`}>
+              <div className="p-6 md:p-8 rounded-xl border border-border-subtle bg-bg-primary hover:border-brand-accent/40 hover:-translate-y-1 transition-all duration-300">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-6">
                   <div>
-                    <h3 className="text-lg md:text-xl font-bold text-text-primary">
+                    <h3 className="text-lg md:text-xl font-extrabold uppercase tracking-wide text-text-primary">
                       {item.title}
                     </h3>
-                    <p className="text-xs md:text-sm text-text-secondary font-medium mt-1">
+                    <p className="text-xs md:text-sm text-text-secondary font-mono mt-1 uppercase tracking-wider">
                       {item.organization} &bull; {item.date}
                     </p>
                   </div>
@@ -81,7 +81,7 @@ const Journey = () => {
                 {/* Bullet Points */}
                 <ul className="space-y-3">
                   {item.bulletPoints.map((pt, pIdx) => (
-                    <li key={pIdx} className="flex items-start gap-3 text-xs md:text-sm text-text-secondary leading-relaxed">
+                    <li key={pIdx} className="flex items-start gap-3 text-xs md:text-sm text-text-secondary leading-relaxed font-sans">
                       <CheckCircle2 size={16} className="text-brand-teal shrink-0 mt-0.5" />
                       <span>{pt}</span>
                     </li>

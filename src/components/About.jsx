@@ -18,15 +18,15 @@ const About = () => {
             <span className="w-6 h-[1px] bg-brand-accent"></span>
             <span>Developer Story</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold font-sans tracking-tight mb-8">
-            Engineering solutions at the <span className="font-serif italic font-normal text-brand-accent-light">intersection of AI & Systems</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight mb-8 text-text-primary">
+            Engineering solutions at the <span className="font-serif italic font-normal text-brand-accent-light">intersection of AI &amp; Systems</span>
           </h2>
           <div className="space-y-6 text-sm md:text-base text-text-secondary leading-relaxed font-sans">
             <p>
               I am a Computer Science student passionate about building highly interactive web apps and AI-infused architectures. My technical journey is anchored in computer science fundamentals, algortihmic problem solving (450+ solved problems), and design patterns.
             </p>
             <p>
-              From building production-grade full-stack products like <strong className="text-text-primary">EvenAfter</strong> (Gemini AI real-time chat) and <strong className="text-text-primary">DayZero</strong> (AI Hiring platform with analytics), to creating distributed digital portal designs like <strong className="text-text-primary">Aarogya Aadhar</strong>, I specialize in bringing software to life with modern architecture.
+              From building production-grade full-stack products like <strong className="text-text-primary">GigSure</strong> (Parametric Insurance platform) and <strong className="text-text-primary">WhyCode</strong> (AI Codebase Knowledge recovery), to building hackathon-winning portals like <strong className="text-text-primary">DayZero</strong>, I specialize in bringing software to life with modern architecture.
             </p>
             <p>
               I focus heavily on <strong className="text-text-primary">Backend architecture, LLM orchestrations (Gemini, OpenAI, Claude), and System Design</strong>. I aim to write highly optimized, clean, and modular code that delivers premium performance and flawless responsiveness.

@@ -46,10 +46,10 @@ async function analyzeCandidateCode(repoPath) {
   });
   
   return {
-    problemsSolved: 450,
+    problemsSolved: 500,
     coachInStatus: "Top 100 / 21k Selected",
     hackathonFinish: "Top 8 Finish (DayZero)",
-    gradeCGPA: 8.66,
+    gradeCGPA: 8.57,
     recommendation: "STRONG HIRE"
   };
 }`;
@@ -67,7 +67,7 @@ async function analyzeCandidateCode(repoPath) {
   }, []);
 
   return (
-    <section id="home" className="min-height-[95vh] relative pt-32 pb-20 px-6 md:px-16 lg:px-24 flex flex-col lg:flex-row items-center justify-between gap-12 grid-bg">
+    <section id="home" className="min-height-[95vh] relative pt-32 pb-20 px-6 md:px-16 lg:px-24 flex flex-col lg:flex-row items-center justify-between gap-12">
       {/* Background blobs */}
       <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-brand-accent/5 blur-[80px] pointer-events-none -z-10 animate-pulse-slow"></div>
       <div className="absolute bottom-[10%] left-[5%] w-[300px] h-[300px] rounded-full bg-brand-teal/3 blur-[60px] pointer-events-none -z-10"></div>
@@ -75,35 +75,34 @@ async function analyzeCandidateCode(repoPath) {
       {/* Hero Content */}
       <div className="flex-1 max-w-2xl text-left select-none">
         {/* Eyebrow */}
-        <motion.div 
+        {/* <motion.div 
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 bg-brand-accent/10 border border-brand-accent/20 px-3 py-1 rounded-full text-xs font-bold text-brand-accent-light uppercase tracking-widest mb-6"
+          className="inline-flex items-center gap-2 bg-brand-accent/10 border border-brand-accent/20 px-3.5 py-1 rounded-full text-[11px] font-bold text-brand-accent-light uppercase tracking-widest mb-6"
         >
           <Sparkles size={12} />
-          <span>CSE • AI/ML Undergraduate</span>
-        </motion.div>
+          <span>CSE • AI/ML Undergraduate (2024–2028)</span>
+        </motion.div> */}
 
-        {/* Large Name */}
+        {/* Large Per Appelgren Style Name */}
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
-          className="text-5xl md:text-7xl font-bold tracking-tight text-text-primary leading-[1.08] mb-4 font-sans"
+          className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-tight text-text-primary leading-[1.05] mb-4 font-sans"
         >
-          Saavi <br className="hidden md:inline" />
-          <span className="font-serif italic font-normal text-brand-accent-light bg-gradient-to-r from-brand-accent-light to-brand-teal bg-clip-text text-transparent">Kotadia</span>
+          Saavi <span className="text-brand-accent-light font-normal italic font-serif">Kotadia</span>
         </motion.h1>
 
-        {/* Professional Headline */}
+        {/* Professional Editorial Headline */}
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="text-lg md:text-xl font-medium text-text-secondary mb-6 font-serif italic tracking-wide"
+          className="text-sm md:text-base font-bold uppercase tracking-wider text-text-secondary mb-6 font-mono"
         >
-          Software Engineer &bull; AI Engineer &bull; Full Stack Developer
+          Software Engineer &bull; AI Systems Developer &bull; Full Stack Architect
         </motion.p>
 
         {/* Bio */}
@@ -111,9 +110,9 @@ async function analyzeCandidateCode(repoPath) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.35 }}
-          className="text-sm md:text-base text-text-secondary leading-relaxed max-w-lg mb-10 font-sans"
+          className="text-xs md:text-sm text-text-secondary leading-relaxed max-w-lg mb-10 font-sans"
         >
-          I build production-grade web systems and intelligent integrations. Currently engineering full-stack software and integrating large language models with a strong analytical foundation in DSA.
+          Engineering full-stack software architectures and intelligent LLM pipelines. Selected out of 21,000+ applicants for LinkedIn CoachIn with an analytical foundation of 500+ solved algorithmic problems.
         </motion.p>
 
         {/* CTAs */}
@@ -125,22 +124,24 @@ async function analyzeCandidateCode(repoPath) {
         >
           <a 
             href="#projects" 
-            className="flex items-center gap-2 bg-gradient-to-r from-brand-accent to-brand-accent-light text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-lg shadow-lg shadow-brand-accent/25 hover:shadow-brand-accent/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+            className="kinetic-link flex items-center gap-2 bg-text-primary text-bg-primary text-xs font-extrabold uppercase tracking-widest px-6 py-3.5 rounded-lg border border-text-primary hover:bg-brand-accent-light hover:border-brand-accent-light transition-all duration-200"
           >
-            <Folder size={14} />
-            <span>View Projects</span>
+            <span className="kinetic-inner">
+              <span className="flex items-center gap-2"><Folder size={14} /> View Work Archive</span>
+              <span className="flex items-center gap-2 text-bg-primary"><Folder size={14} /> View Work Archive</span>
+            </span>
           </a>
           <a 
             href="#contact" 
-            className="flex items-center gap-2 bg-transparent text-text-secondary hover:text-text-primary text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-lg border border-border-subtle hover:border-brand-accent transition-all duration-200"
+            className="flex items-center gap-2 bg-transparent text-text-secondary hover:text-text-primary text-xs font-bold uppercase tracking-widest px-6 py-3.5 rounded-lg border border-border-subtle hover:border-text-primary transition-all duration-200"
           >
-            <span>Contact Me</span>
+            <span>Contact Studio</span>
             <ArrowRight size={14} />
           </a>
           <a 
             href="/resume.pdf" 
             target="_blank"
-            className="flex items-center gap-2 text-xs font-bold text-text-muted hover:text-brand-accent-light uppercase tracking-wider px-2 py-3 transition-colors duration-200"
+            className="flex items-center gap-2 text-xs font-bold text-text-muted hover:text-brand-accent-light uppercase tracking-widest px-2 py-3 transition-colors duration-200"
           >
             <FileDown size={14} />
             <span>Resume</span>
@@ -158,7 +159,7 @@ async function analyzeCandidateCode(repoPath) {
             <Flame size={20} className="text-brand-accent-light shrink-0" />
             <div>
               <h3 className="text-xl md:text-2xl font-bold text-text-primary">
-                <AnimatedCounter value={450} suffix="+" />
+                <AnimatedCounter value={500} suffix="+" />
               </h3>
               <p className="text-[10px] uppercase tracking-wider text-text-secondary">DSA Solved</p>
             </div>
@@ -185,7 +186,7 @@ async function analyzeCandidateCode(repoPath) {
             <GraduationCap size={20} className="text-indigo-400 shrink-0" />
             <div>
               <h3 className="text-xl md:text-2xl font-bold text-text-primary">
-                <AnimatedCounter value={8.66} duration={1.2} suffix="" />
+                <AnimatedCounter value={8.57} duration={1.2} suffix="" />
               </h3>
               <p className="text-[10px] uppercase tracking-wider text-text-secondary">GPA Score</p>
             </div>

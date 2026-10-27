@@ -62,15 +62,15 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 px-6 md:px-16 lg:px-24 bg-bg-secondary select-none">
+    <section id="skills" className="py-24 px-6 md:px-16 lg:px-24 bg-bg-primary select-none">
       <div className="max-w-6xl mx-auto text-left">
         {/* Section Header */}
         <div className="flex items-center gap-2 text-brand-accent text-xs font-bold uppercase tracking-widest mb-4">
           <span className="w-6 h-[1px] bg-brand-accent"></span>
           <span>Technical Stack</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 tracking-tight">
-          Tools &amp; <span className="font-serif italic font-normal text-brand-accent-light bg-gradient-to-r from-brand-accent-light to-brand-teal bg-clip-text text-transparent">Expertise</span>
+        <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight mb-16 text-text-primary">
+          Tools &amp; <span className="font-serif italic font-normal text-brand-accent-light">Expertise</span>
         </h2>
 
         {/* Skills Cards Grid */}
@@ -82,14 +82,14 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.4, delay: catIdx * 0.1 }}
-              className="p-6 rounded-xl border border-border-subtle bg-bg-tertiary hover:border-brand-accent/30 hover:bg-bg-primary/40 hover:-translate-y-1 transition-all duration-300 group"
+              className="p-6 rounded-xl border border-border-subtle bg-bg-secondary hover:border-brand-accent/40 hover:-translate-y-1 transition-all duration-300 group"
             >
               {/* Category Header */}
-              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-border-subtle group-hover:border-brand-accent/20 transition-all">
-                <div className="p-2 rounded-lg bg-bg-secondary group-hover:bg-brand-accent/10 transition-colors">
+              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-border-subtle group-hover:border-brand-accent/30 transition-all">
+                <div className="p-2 rounded-lg bg-bg-primary border border-border-subtle group-hover:scale-105 transition-transform">
                   {category.icon}
                 </div>
-                <h3 className="text-xs md:text-sm font-bold text-text-primary group-hover:text-brand-accent-light transition-colors">
+                <h3 className="text-xs md:text-sm font-extrabold uppercase tracking-wider text-text-primary group-hover:text-brand-accent-light transition-colors">
                   {category.title}
                 </h3>
               </div>
@@ -103,7 +103,7 @@ const Skills = () => {
                       <span className="text-brand-accent-light font-mono font-semibold">{skill.level}%</span>
                     </div>
                     {/* Progress Bar Track */}
-                    <div className="h-1 bg-bg-secondary rounded-full overflow-hidden border border-border-subtle">
+                    <div className="h-1 bg-bg-primary rounded-full overflow-hidden border border-border-subtle">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}

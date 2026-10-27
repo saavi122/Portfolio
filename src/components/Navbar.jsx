@@ -36,8 +36,8 @@ const Navbar = ({ onOpenCmdPalette, onOpenTerminal }) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-border-subtle px-6 py-4 flex items-center justify-between transition-all duration-300">
       {/* Logo */}
-      <Link to="/" className="text-xl font-serif font-semibold tracking-wide hover:opacity-80 transition-opacity">
-        Saavi <span className="text-brand-accent italic font-normal">Kotadia</span>
+      <Link to="/" className="text-sm md:text-base font-extrabold uppercase tracking-widest text-text-primary hover:text-brand-accent-light transition-colors">
+        Saavi <span className="text-brand-accent-light font-normal">Kotadia</span>
       </Link>
 
       {/* Desktop Links */}
@@ -46,10 +46,13 @@ const Navbar = ({ onOpenCmdPalette, onOpenTerminal }) => {
           <button
             key={link.id}
             onClick={() => handleNavClick(link.id)}
-            className="text-xs uppercase tracking-widest text-text-secondary hover:text-brand-accent-light font-semibold transition-colors cursor-pointer"
+            className="kinetic-link text-xs uppercase tracking-widest text-text-secondary hover:text-text-primary font-bold transition-colors cursor-pointer"
             id={`nav-link-${link.id}`}
           >
-            {link.name}
+            <span className="kinetic-inner">
+              <span>{link.name}</span>
+              <span className="text-brand-accent-light">{link.name}</span>
+            </span>
           </button>
         ))}
       </div>

@@ -26,7 +26,7 @@ const WhyHireMe = () => {
     },
     {
       title: 'Real-World Project Execution',
-      desc: 'Experience building applications like EvenAfter, DayZero, and Vogue Vista. Focused on architecture flows, database schemas, and clean endpoints.',
+      desc: 'Experience building applications like GigSure, WhyCode, DayZero, and Vogue Vista. Focused on architecture flows, database schemas, and clean endpoints.',
       icon: <Rocket size={20} className="text-pink-400" />
     },
     {
@@ -44,8 +44,8 @@ const WhyHireMe = () => {
           <span className="w-6 h-[1px] bg-brand-accent"></span>
           <span>Recruiter Overview</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 tracking-tight">
-          Why <span className="font-serif italic font-normal text-brand-accent-light bg-gradient-to-r from-brand-accent-light to-brand-teal bg-clip-text text-transparent">Hire Me?</span>
+        <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight mb-16 text-text-primary">
+          Why <span className="font-serif italic font-normal text-brand-accent-light">Hire Me?</span>
         </h2>
 
         {/* Advantages Grid */}

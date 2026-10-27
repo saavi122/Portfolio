@@ -10,9 +10,9 @@ const GithubIcon = ({ size = 20, ...props }) => (
 
 const GitHub = () => {
   const [repos, setRepos] = useState([
-    { name: 'EvenAfter', desc: 'Gemini-powered real-time MERN stack messaging system.', stars: 12, forks: 3, lang: 'JavaScript' },
-    { name: 'DayZero', desc: 'AI Recruitment Screening portal built for LinkedIn Hackathon.', stars: 16, forks: 4, lang: 'Python' },
-    { name: 'VogueVista', desc: 'Apparel recommendations powered by Claude & OpenAI.', stars: 8, forks: 2, lang: 'JavaScript' }
+    { name: 'GigSure', desc: 'Parametric micro-insurance platform protecting gig economy workers.', stars: 14, forks: 4, lang: 'JavaScript' },
+    { name: 'WhyCode', desc: 'AI knowledge recovery platform indexing codebase history.', stars: 18, forks: 5, lang: 'TypeScript' },
+    { name: 'DayZero', desc: 'AI Recruitment Screening portal built for LinkedIn Hackathon.', stars: 16, forks: 4, lang: 'Python' }
   ]);
 
   // Generate simulated contribution squares
@@ -30,9 +30,9 @@ const GitHub = () => {
   }
 
   const activities = [
-    { text: 'Merged pull request #4 in EvenAfter/sockets-refactor', time: '2 hours ago' },
-    { text: 'Pushed 3 commits to DayZero/flask-auth-handler', time: 'Yesterday' },
-    { text: 'Created repository VogueVista/ai-fashion-recommender', time: '4 days ago' }
+    { text: 'Pushed 4 commits to GigSure/parametric-triggers', time: '2 hours ago' },
+    { text: 'Merged pull request #3 in WhyCode/gemini-parser', time: 'Yesterday' },
+    { text: 'Pushed 3 commits to DayZero/flask-auth-handler', time: '4 days ago' }
   ];
 
   return (
@@ -43,8 +43,8 @@ const GitHub = () => {
           <GithubIcon size={14} />
           <span>Open Source Profile</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 tracking-tight">
-          GitHub <span className="font-serif italic font-normal text-brand-accent-light bg-gradient-to-r from-brand-accent-light to-brand-teal bg-clip-text text-transparent">Contributions</span>
+        <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight mb-16 text-text-primary">
+          GitHub <span className="font-serif italic font-normal text-brand-accent-light">Contributions</span>
         </h2>
 
         {/* Dashboard Grid */}

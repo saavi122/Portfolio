@@ -156,6 +156,77 @@ const CaseStudy = () => {
   }, [projectId]);
 
   const projectsData = {
+    gigsure: {
+      title: 'GigSure',
+      subtitle: 'Parametric Micro-Insurance Platform for Gig Workers',
+      problem: 'Gig economy workers (delivery partners, ride-hailing drivers) suffer severe income volatility due to extreme weather disruptions and localized rain without traditional insurance safety nets.',
+      research: 'Analyzed parametric insurance models driven by automated weather trigger data. Designed a policy structure with dynamic premium estimation and instant zero-friction claim payouts.',
+      planning: 'Built a responsive web application that monitors weather threshold triggers, calculates policy coverage limits, and automates claims verification when thresholds are breached.',
+      dbDesign: `// Database Schema Structure
+PolicyHolder {
+  _id: ObjectId,
+  workerId: String,
+  zoneRegion: String,
+  dailyPremium: Number,
+  coverageLimit: Number,
+  activeStatus: Boolean
+}
+
+WeatherTriggerClaim {
+  _id: ObjectId,
+  policyId: ObjectId,
+  triggerEvent: String ["Rainfall > 30mm", "Heatwave > 42°C"],
+  payoutAmount: Number,
+  payoutStatus: String ["Approved", "Processed"],
+  timestamp: Date
+}`,
+      apiFlow: `POST /api/insurance/claim-trigger
+Request Body:
+{
+  "workerId": "gig-9942",
+  "location": "Mumbai South",
+  "rainfallMm": 45.2
+}
+
+Response Body:
+{
+  "status": "APPROVED",
+  "claimId": "CLM-88301",
+  "payout": 450,
+  "transferStatus": "SUCCESS"
+}`,
+      challenges: 'Challenge: Ensuring accurate parametric trigger thresholds for localized weather anomalies. Solution: Modeled trigger mechanisms based on live weather API endpoints to automate instant payouts.',
+      performance: 'Lighthouse scoring: 98% Performance, 99% Accessibility. Lightweight frontend architecture optimized for low-bandwidth mobile environments.',
+      future: 'Integrate automated UPI instant payouts and real-time GPS boundary verification for delivery partner networks.',
+      github: 'https://github.com/saavi122/GigSure',
+      demo: 'https://gig-sure-ten.vercel.app/',
+      architectureDiagram: (
+        <svg viewBox="0 0 600 220" className="w-full h-auto bg-bg-dark rounded-xl border border-border-subtle p-6">
+          <rect x="20" y="80" width="100" height="60" rx="8" fill="#0f0f1a" stroke="#10b981" strokeWidth="1.5" />
+          <text x="70" y="115" fill="#e8e8f0" fontSize="11" textAnchor="middle" fontFamily="monospace">Gig Worker UI</text>
+
+          <path d="M120 110 L200 110" stroke="#34d399" strokeWidth="1.5" fill="none" markerEnd="url(#arrow-gigsure)" />
+
+          <rect x="200" y="80" width="120" height="60" rx="8" fill="#0f0f1a" stroke="#38bdf8" strokeWidth="1.5" />
+          <text x="260" y="115" fill="#e8e8f0" fontSize="11" textAnchor="middle" fontFamily="monospace">Parametric Engine</text>
+
+          <path d="M320 100 L400 100" stroke="#38bdf8" strokeWidth="1.5" fill="none" />
+          <path d="M320 120 L400 120" stroke="#f59e0b" strokeWidth="1.5" fill="none" />
+
+          <rect x="400" y="50" width="120" height="50" rx="8" fill="#0f0f1a" stroke="#f59e0b" strokeWidth="1.5" />
+          <text x="460" y="80" fill="#e8e8f0" fontSize="10" textAnchor="middle" fontFamily="monospace">Weather API</text>
+
+          <rect x="400" y="120" width="120" height="50" rx="8" fill="#0f0f1a" stroke="#10b981" strokeWidth="1.5" />
+          <text x="460" y="150" fill="#e8e8f0" fontSize="10" textAnchor="middle" fontFamily="monospace">Instant Payout</text>
+
+          <defs>
+            <marker id="arrow-gigsure" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#34d399" />
+            </marker>
+          </defs>
+        </svg>
+      )
+    },
     whycode: {
       title: 'WhyCode',
       subtitle: 'AI Knowledge Recovery Platform & Microservice Dependency Graph',
@@ -341,8 +412,8 @@ Response Body:
       challenges: 'Challenge: GitHub contribution APIs are rate-limited. Solution: Built an internal caching service in MongoDB to cache repository metadata and log statistics, updating entries once every 24 hours.',
       performance: 'Lighthouse scoring: 96% accessibility. Optimized MongoDB queries using projection limits, reducing data payloads by 40%.',
       future: 'Create a direct Slack notification system so that recruiters receive automated alerts when a highly rated developer commits code.',
-      github: 'https://github.com/saavi122',
-      demo: '#',
+      github: 'https://github.com/saavi122/DayZero',
+      demo: 'https://day-zero-pi.vercel.app/',
       architectureDiagram: (
         <svg viewBox="0 0 600 220" className="w-full h-auto bg-bg-dark rounded-xl border border-border-subtle p-6">
           <rect x="20" y="80" width="100" height="60" rx="8" fill="#0f0f1a" stroke="#7b6ef6" strokeWidth="1.5" />
@@ -398,8 +469,8 @@ Response Body:
       challenges: 'Challenge: Slow generative outputs caused interface freezes. Solution: Structured a multi-step typing loader while parsing JSON streams from OpenAI/Claude endpoints.',
       performance: 'Lighthouse scoring: 97% best practices. Lazy-loaded fashion model frames and SVG illustrations.',
       future: 'Integrate dynamic virtual camera dressing rooms (WebRTC + computer vision) to overlay recommended clothes in real-time.',
-      github: 'https://github.com/saavi122',
-      demo: '#',
+      github: '',
+      demo: '',
       architectureDiagram: (
         <svg viewBox="0 0 600 220" className="w-full h-auto bg-bg-dark rounded-xl border border-border-subtle p-6">
           <rect x="20" y="80" width="100" height="60" rx="8" fill="#0f0f1a" stroke="#7b6ef6" strokeWidth="1.5" />
@@ -538,22 +609,28 @@ toCelsius(val, unit) {
 
         {/* Links */}
         <div className="flex gap-4 mt-6">
-          <a 
-            href={project.github} 
-            target="_blank" 
-            rel="noreferrer" 
-            className="flex items-center gap-1.5 px-4 py-2 border border-border-subtle hover:border-brand-accent bg-bg-panel hover:bg-bg-tertiary text-xs font-bold text-text-secondary hover:text-text-primary rounded-lg transition-all"
-          >
-            <GithubIcon size={14} />
-            <span>GitHub Repository</span>
-          </a>
-          <a 
-            href={project.demo} 
-            className="flex items-center gap-1.5 px-4 py-2 border border-brand-accent/20 bg-brand-accent/5 hover:bg-brand-accent/15 text-xs font-bold text-brand-accent-light rounded-lg transition-all"
-          >
-            <ExternalLink size={14} />
-            <span>Live Demonstration</span>
-          </a>
+          {project.github && project.github !== '#' && (
+            <a 
+              href={project.github} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="flex items-center gap-1.5 px-4 py-2 border border-border-subtle hover:border-brand-accent bg-bg-panel hover:bg-bg-tertiary text-xs font-bold text-text-secondary hover:text-text-primary rounded-lg transition-all"
+            >
+              <GithubIcon size={14} />
+              <span>GitHub Repository</span>
+            </a>
+          )}
+          {project.demo && project.demo !== '#' && (
+            <a 
+              href={project.demo} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="flex items-center gap-1.5 px-4 py-2 border border-brand-accent/20 bg-brand-accent/5 hover:bg-brand-accent/15 text-xs font-bold text-brand-accent-light rounded-lg transition-all"
+            >
+              <ExternalLink size={14} />
+              <span>Live Demonstration</span>
+            </a>
+          )}
         </div>
       </div>
 
